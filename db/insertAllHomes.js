@@ -5,11 +5,11 @@ var insertAllHomes = () => {
   var cities = ["Manhattan", "Brooklyn", "Queens", "Bronx", "Staten Island"];
   for (var i = 0; i < 100; i++) {
     var home = generateHomeAttributes({}, i, cities);
-    new Home(home)
-      .save(err => {
-        console.log("error");
-      })
-      .exec();
+    new Home(home).save(err => {
+      if (err) {
+        console.log(err);
+      }
+    });
   }
 };
 
