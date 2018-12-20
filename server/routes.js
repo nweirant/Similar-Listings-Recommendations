@@ -1,7 +1,7 @@
 const express = require("express");
-const helpers = require("../helpers/helpers.js");
+const routeHandlers = require("./controllers/homeControllers.js");
 const router = express.Router();
 
-router.get("/api/items/:id");
+router.get("/api/items/:id", routeHandlers.retrieveOne);
 
 module.exports = router;
