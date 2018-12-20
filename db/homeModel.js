@@ -7,6 +7,7 @@ const homeSchema = new mongoose.Schema({
   price: { type: Number },
   bedNum: { type: Number },
   bathNum: { type: Number },
+  sqFootage: { type: Number },
   imageUrl: { type: String, unique: true }
 });
 
