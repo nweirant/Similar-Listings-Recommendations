@@ -74,3 +74,5 @@ var getRandomNumber = function(min, max) {
 };
 
 insertAllHomes();
+
+module.exports = insertAllHomes;
