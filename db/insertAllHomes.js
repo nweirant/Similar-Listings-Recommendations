@@ -2,7 +2,7 @@ const faker = require("faker");
 const Home = require("./homeModel.js");
 
 var insertAllHomes = () => {
-  var cities = ["Manhattan", "Brooklyn", "Queens", "Bronx", "Staten Island"];
+  var cities = ["MANHATTAN", "BROOKLYN", "QUEENS", "BRONX", "STATEN ISLAND"];
   for (var i = 0; i < 100; i++) {
     var home = generateHomeAttributes({}, i, cities);
     new Home(home).save(err => {
