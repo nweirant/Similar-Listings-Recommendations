@@ -21,7 +21,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        Hello
         <ListingCarousel listings={this.state.listings} />
       </div>
     );
