@@ -1,4 +1,5 @@
-var homes = require("../helpers/homes.js");
+const path = require("path");
+const homes = require("../helpers/homes.js");
 
 const routeHandlers = {
   retrieveOne: (req, res) => {
@@ -10,6 +11,9 @@ const routeHandlers = {
         res.send(results);
       }
     });
+  },
+  route: (req, res) => {
+    res.sendFile(path.join(__dirname, "../../client/dist/index.html"));
   }
 };
 

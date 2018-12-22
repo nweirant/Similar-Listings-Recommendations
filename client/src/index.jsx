@@ -1,30 +1,21 @@
-import Axios from "axios";
+import React from "react";
+import ReactDOM from "react-dom";
+import { Route, BrowserRouter } from "react-router-dom";
 import ListingCarousel from "./components/ListingCarousel.jsx";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { listings: [] };
-    this.getSimilarListings = this.getSimilarListings.bind(this);
-  }
-  componentDidMount() {
-    this.getSimilarListings();
-  }
-
-  getSimilarListings(id) {
-    Axios.get("/api/items/5").then(({ data }) => {
-      console.log(data);
-      this.setState({ listings: data });
-    });
-  }
-
   render() {
     return (
       <div>
-        <ListingCarousel listings={this.state.listings} />
+        <Route exact path="/homes/:id" component={ListingCarousel} />
       </div>
     );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("app")
+);
