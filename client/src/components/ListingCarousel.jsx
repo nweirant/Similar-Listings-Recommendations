@@ -10,14 +10,11 @@ class ListingCarousel extends React.Component {
   }
 
   componentDidMount() {
-    // console.log(this.props);
-    // console.log(this.props.match.params.id);
     var id = this.props.match.params.id;
     this.getSimilarListings(id);
   }
 
   getSimilarListings(id) {
-    // console.log(id);
     Axios.get(`/api/items/${id}`).then(({ data }) => {
       this.setState({ listings: data });
     });

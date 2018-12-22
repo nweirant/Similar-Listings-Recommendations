@@ -3,6 +3,6 @@ const routeHandlers = require("./controllers/homeControllers.js");
 const router = express.Router();
 
 router.get("/api/items/:id", routeHandlers.retrieveOne);
-// router.get("/*", routeHandlers.route);
+router.get("/*", routeHandlers.alternateRoute);
 
 module.exports = router;
