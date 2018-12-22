@@ -1,8 +1,24 @@
+/* .image-container {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.image-container:hover {
+  text-decoration: underline;
+}
+
 .images {
   height: 200px;
   width: 300px;
 }
 
+.listing {
+  float: left;
+  margin: 10px;
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+}
+
 .listing:hover {
   cursor: pointer;
-}
+  box-shadow: 0px 1px 0px 0px grey;
+} */

@@ -61,4 +61,4 @@ typings/
 .next
 
 # bundle.js file
-bundle.js
+/client/dist/bundle.js
