@@ -23,27 +23,34 @@ class ListingCarousel extends React.Component {
   render() {
     const { listings } = this.state;
     return (
-      <section
-        className="carousel slide"
-        data-ride="carousel"
-        id="postsCarousel"
-      >
-        <h1>Similar Sales</h1>
-        <div
-          id="recipeCarousel"
-          className="carousel slide w-100"
-          data-ride="carousel"
-        >
-          <div className="container p-t-0 m-t-2 carousel-inner">
-            <div className="row row-equal carousel-item active m-t-0">
-              {listings.map(listing => (
-                <div className="image-container" key={listing._id}>
-                  <Listing listing={listing} />
-                </div>
-              ))}
-            </div>
+      <section className="container p-t-3">
+        <div className="row">
+          <div className="col-lg-12">
+            <h1>Similar Sales</h1>
           </div>
         </div>
+        <section
+          className="carousel slide"
+          data-ride="carousel"
+          id="postsCarousel"
+        >
+          <div
+            id="recipeCarousel"
+            className="carousel slide w-100"
+            data-ride="carousel"
+          >
+            <div className="container p-t-0 m-t-2 carousel-inner">
+              <div className="row row-equal carousel-item active m-t-0">
+                {listings.map(listing => (
+                  <div className="col-md-4" key={listing._id}>
+                    {/* <div className="image-container"> */}
+                    <Listing listing={listing} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
     );
   }
