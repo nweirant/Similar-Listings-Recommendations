@@ -4,6 +4,7 @@
   "description": "This is a simple monolithic application for a recommendation component.",
   "main": "index.js",
   "scripts": {
+    "dev": "concurrently --kill-others \"npm run react-dev\" \"npm run server-dev\"",
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon ./server/index.js",
     "test": "jest"
@@ -24,8 +25,11 @@
     "express": "^4.16.4",
     "faker": "^4.1.0",
     "mongoose": "^5.4.0",
+    "nodemon": "^1.18.9",
     "path": "^0.12.7",
-    "react": "^16.7.0"
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -36,6 +40,7 @@
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "concurrently": "^4.1.0",
     "jest": "^23.6.0",
     "jest-puppeteer": "^3.7.0",
     "mocha": "^5.2.0",

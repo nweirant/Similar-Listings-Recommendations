@@ -23,35 +23,59 @@ class ListingCarousel extends React.Component {
   render() {
     const { listings } = this.state;
     return (
-      <section className="container p-t-3">
-        <div className="row">
-          <div className="col-lg-12">
-            <h1>Similar Sales</h1>
+      <div className="contentBlock">
+        <section className="container p-t-3">
+          <div className="row">
+            <div className="col-lg-12">
+              <h1>Similar Sales</h1>
+            </div>
           </div>
-        </div>
+        </section>
         <section
           className="carousel slide"
           data-ride="carousel"
           id="postsCarousel"
+          // data-interval="false"
         >
-          <div
-            id="recipeCarousel"
-            className="carousel slide w-100"
-            data-ride="carousel"
-          >
-            <div className="container p-t-0 m-t-2 carousel-inner">
-              <div className="row row-equal carousel-item active m-t-0">
-                {listings.map(listing => (
-                  <div className="col-md-4" key={listing._id}>
-                    {/* <div className="image-container"> */}
-                    <Listing listing={listing} />
-                  </div>
-                ))}
-              </div>
+          <div class="SimilarBlock-actions jsSimilarListingsActions">
+            <span>alo</span>
+            <span class="SimilarBlock-actionsButton SimilarBlock-actionsButton--prev">
+              <div class="CircleArrow CircleArrow--prev jsArrowLeft isInactive" />
+            </span>
+            <span class="SimilarBlock-actionsButton">
+              <div class="CircleArrow jsArrowRight" />
+            </span>
+          </div>
+          <div className="container p-t-0 m-t-2 carousel-inner">
+            <div className="row row-equal carousel-item active m-t-0">
+              {listings.slice(0, 3).map(listing => (
+                <div className="col-md-4 cardSlide" key={listing._id}>
+                  <Listing listing={listing} />
+                </div>
+              ))}
+            </div>
+            <div class="row row-equal carousel-item m-t-0">
+              {listings.slice(3, 6).map(listing => (
+                <div className="col-md-4 cardSlide" key={listing._id}>
+                  <Listing listing={listing} />
+                </div>
+              ))}
+            </div>
+            <div class="row row-equal carousel-item m-t-0">
+              {listings.slice(6, 9).map(listing => (
+                <div className="col-md-4 cardSlide" key={listing._id}>
+                  <Listing listing={listing} />
+                </div>
+              ))}
             </div>
           </div>
+          {/* <div>
+          <span className="prev">
+            <div className="prevCircleArrow">::after</div>
+          </span>
+        </div> */}
         </section>
-      </section>
+      </div>
     );
   }
 }
