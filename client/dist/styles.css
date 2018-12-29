@@ -1,35 +1,3 @@
-/* .image-container {
-  overflow: auto;
-  white-space: nowrap;
-}
-
-.image-container:hover {
-  text-decoration: underline;
-}
-
-.images {
-  height: 200px;
-  width: 300px;
-}
-
-.listing {
-  float: left;
-  margin: 10px;
-  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
-}
-
-.listing:hover {
-  cursor: pointer;
-  box-shadow: 0px 1px 0px 0px grey;
-} */
-
-/* img {
-  height: 200px;
-  width: 300px;
-  background-position: center center;
-  background-repeat: no-repeat;
-} */
-
 .body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
@@ -39,26 +7,38 @@
   color: #292b2c;
 }
 
+.container {
+  width: 980px;
+  /* margin: 0 -9px;
+  overflow: hidden;
+  padding: 0 9px 8px; */
+}
+
 .contentBlock {
-  padding: 24px 0;
+  /* padding: 24px 0; */
   width: 980px;
   margin: 0 auto;
 }
 
+.carousel-item {
+  width: 980px;
+}
+
 .cardSlide {
   width: 311.333px;
-  /* margin-right: 23px;
-  float: left; */
+}
+
+.cardSlide:not(:nth-child(3n)) {
+  margin-right: 23px;
 }
 
 .card {
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   position: relative;
-  /* width: 311.333px; */
-  width: 100%;
-  margin-right: 23px;
-  /* margin: 0 auto; */
+  width: 311.333px;
+  /* margin-right: 23px; */
+  display: flex;
 }
 
 .card-info {
@@ -93,8 +73,6 @@
 .card-priceSpacer {
   display: block;
   flex-grow: 1;
-  /* padding-bottom: 15vh; */
-  /* line-height: 22.4px; */
   height: 48px;
 }
 
@@ -108,30 +86,19 @@
 }
 
 .card-img-top {
-  /* width: 100%;
-  height: 15vw;
-  object-fit: cover; */
   background-position: center;
   background-size: cover;
   display: flex;
   flex-direction: column-reverse;
   height: 230px;
   position: relative;
-  /* height: 100%;
-  position: absolute;
-  width: 100%;
-  z-index: 1; */
 }
 
 .card-save {
   background-size: cover;
   height: 25px;
-  /* overflow: hidden; */
   position: absolute;
   right: 20px;
-  /* top: 5px; */
-  /*text-indent: 35px;
-  width: 25px; */
   z-index: 10;
 }
 
@@ -158,21 +125,9 @@
   line-height: 14px;
   text-align: left;
   margin-right: 5px;
-  /* margin-bottom: 2px; */
-  /* top: 1px;
-  width: 22px;
-  display: inline-block;
-  height: 13px;
-  position: relative; */
 }
 
 .card-property-bath {
-  /* top: 1px;
-  width: 22px;
-  display: inline-block;
-  height: 13px;
-  position: relative; */
-
   margin-right: 5px;
   font-size: 14px;
   line-height: 14px;
@@ -180,11 +135,6 @@
 }
 
 .card-property-footage {
-  /* top: 1px;
-  width: 22px;
-  display: inline-block;
-  height: 13px;
-  position: relative; */
   margin-right: 5px;
   font-size: 14px;
   line-height: 14px;
@@ -212,28 +162,6 @@
   left: 50%;
 }
 
-.carousel-inner > .carousel-item {
-  /* opacity: 0; */
-  /* top: 0; */
-  /* left: 0; */
-  width: 100%;
-  /* display: block; */
-  /* position: absolute; */
-}
-
-/* .SimilarBlock-actions {
-  margin: 0 -2px 0 0;
-  position: relative;
-}
-
-.SimilarBlock-actionsButton {
-  bottom: 174px;
-  height: 52px;
-  position: absolute;
-  right: -66px;
-  width: 52px;
-}
-*/
 .CircleArrow {
   display: block;
   width: 100%;
@@ -253,4 +181,52 @@
 
 .CircleArrow:hover {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+a:hover {
+  /* background-color: #ddd; */
+  color: black;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.previous {
+  color: black;
+  /* height: 100%; */
+  border-radius: 53%;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+  transition: all 300ms;
+  cursor: pointer;
+  bottom: 174px;
+  height: 52px;
+  width: 52px;
+  left: -66px;
+  position: absolute;
+}
+
+.next {
+  color: black;
+  /* height: 100%; */
+  border-radius: 53%;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+  transition: all 300ms;
+  cursor: pointer;
+  bottom: 174px;
+  height: 52px;
+  width: 52px;
+  right: -66px;
+  position: absolute;
+}
+
+.round {
+  /* border-radius: 50%; */
 }
