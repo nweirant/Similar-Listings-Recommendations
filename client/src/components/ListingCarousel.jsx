@@ -7,6 +7,8 @@ class ListingCarousel extends React.Component {
     super(props);
     this.state = { listings: [] };
     this.getSimilarListings = this.getSimilarListings.bind(this);
+    this.handlePrevClick = this.handlePrevClick.bind(this);
+    this.handleNextClick = this.handleNextClick.bind(this);
   }
 
   componentDidMount() {
@@ -20,37 +22,49 @@ class ListingCarousel extends React.Component {
     });
   }
 
+  handlePrevClick() {
+    $(".carousel").carousel("prev");
+  }
+
+  handleNextClick() {
+    $(".carousel").carousel("next");
+  }
+
   render() {
     const { listings } = this.state;
     return (
       <div className="contentBlock">
         <section className="container p-t-3">
           <div className="row">
-            <div className="col-lg-12">
-              <h1>Similar Sales</h1>
+            <div className="heading">
+              <h1 className="title">Similar Sales</h1>
             </div>
           </div>
         </section>
         <section
           className="carousel slide"
+          id="carousel"
           data-ride="carousel"
           id="postsCarousel"
-          // data-interval="false"
+          data-interval="false"
+          data-wrap="false"
         >
-          {/* <div class="SimilarBlock-actions jsSimilarListingsActions"> */}
-          <a href="#" class="previous round">
-            &#8249;
+          <a
+            href="#carousel"
+            className="previous round"
+            data-slide="prev"
+            onClick={this.handlePrevClick}
+          >
+            &lsaquo;
           </a>
-          <a href="#" class="next round">
-            &#8250;
+          <a
+            href="#carousel"
+            className="next round"
+            data-slide="next"
+            onClick={this.handleNextClick}
+          >
+            &rsaquo;
           </a>
-          {/* <span class="SimilarBlock-actionsButton SimilarBlock-actionsButton--prev">
-              <div class="CircleArrow CircleArrow--prev jsArrowLeft isInactive" />
-            </span>
-            <span class="SimilarBlock-actionsButton">
-              <div class="CircleArrow jsArrowRight" />
-            </span> */}
-          {/* </div> */}
           <div className="container carousel-inner">
             <div className="row row-equal carousel-item active m-t-0">
               {listings.slice(0, 3).map(listing => (
@@ -59,14 +73,14 @@ class ListingCarousel extends React.Component {
                 </div>
               ))}
             </div>
-            <div class="row row-equal carousel-item m-t-0">
+            <div className="row row-equal carousel-item m-t-0">
               {listings.slice(3, 6).map(listing => (
                 <div className="cardSlide" key={listing._id}>
                   <Listing listing={listing} />
                 </div>
               ))}
             </div>
-            <div class="row row-equal carousel-item m-t-0">
+            <div className="row row-equal carousel-item m-t-0">
               {listings.slice(6, 9).map(listing => (
                 <div className="cardSlide" key={listing._id}>
                   <Listing listing={listing} />
@@ -74,11 +88,6 @@ class ListingCarousel extends React.Component {
               ))}
             </div>
           </div>
-          {/* <div>
-          <span className="prev">
-            <div className="prevCircleArrow">::after</div>
-          </span>
-        </div> */}
         </section>
       </div>
     );

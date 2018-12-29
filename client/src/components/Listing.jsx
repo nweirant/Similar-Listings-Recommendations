@@ -12,14 +12,13 @@ const Listing = ({ listing }) => {
             <img src="https://cdn-assets-s3.streeteasy.com/assets/svg/icons/save_star_outlined-28528902b24fb7df8745fc07de39842f3019dfea8719052f407f555a9891a44b.svg" />
           </span>
         </div>
-        <div className="title">SALE IN {listing.city}</div>
+        <div className="card-title">SALE IN {listing.city}</div>
         <div className="card-address">{listing.address}</div>
         <div className="card-priceSpacer">
           <div className="card-price">
             ${Number(listing.price).toLocaleString("en")}
           </div>
         </div>
-        {/* <div className="row align-items-center"> */}
         <div className="card-property">
           <div className="card-propertyItem">
             <span className="card-property-bed">
