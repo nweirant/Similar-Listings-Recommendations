@@ -7,11 +7,23 @@
   color: #292b2c;
 }
 
+.carousel {
+  /* overflow: hidden; */
+}
+
 .container {
   width: 980px;
-  /* margin: 0 -9px;
+  /* margin: 0 -9px; */
   overflow: hidden;
-  padding: 0 9px 8px; */
+  /* padding: 0 9px 8px; */
+}
+
+.title {
+  /* font-family: "Source Sans Pro", Helvetica, Arial, sans-serif; */
+  font-weight: 300;
+  text-transform: none;
+  font-size: 32px;
+  line-height: 40px;
 }
 
 .contentBlock {
@@ -26,6 +38,7 @@
 
 .cardSlide {
   width: 311.333px;
+  /* margin-right: 23px; */
 }
 
 .cardSlide:not(:nth-child(3n)) {
@@ -50,7 +63,7 @@
   position: relative;
 }
 
-.title {
+.card-title {
   color: #8c8c8c;
   font-size: 12px;
   line-height: 15px;
@@ -99,7 +112,7 @@
   height: 25px;
   position: absolute;
   right: 20px;
-  z-index: 10;
+  z-index: 1;
 }
 
 .card-save:hover {
