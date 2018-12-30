@@ -2,21 +2,25 @@ import React from "react";
 
 const Listing = ({ listing }) => {
   return (
-    <div className="card">
+    <div className="card rounded-0">
       <div className="card-img-top card-img-top-250 center-cropped">
-        <img className="card-img-top img-fluid" src={listing.imageUrl} />
+        <img
+          className="card-img-top img-fluid rounded-0"
+          src={listing.imageUrl}
+        />
       </div>
       <div className="card-info">
         <div className="card-save">
-          <span>
-            <img src="https://cdn-assets-s3.streeteasy.com/assets/svg/icons/save_star_outlined-28528902b24fb7df8745fc07de39842f3019dfea8719052f407f555a9891a44b.svg" />
-          </span>
+          <img src="https://cdn-assets-s3.streeteasy.com/assets/svg/icons/save_star_outlined-28528902b24fb7df8745fc07de39842f3019dfea8719052f407f555a9891a44b.svg" />
         </div>
         <div className="card-title">SALE IN {listing.city}</div>
         <div className="card-address">{listing.address}</div>
         <div className="card-priceSpacer">
           <div className="card-price">
-            ${Number(listing.price).toLocaleString("en")}
+            $
+            {Number(Math.round(listing.price / 1000) * 1000).toLocaleString(
+              "en"
+            )}
           </div>
         </div>
         <div className="card-property">
