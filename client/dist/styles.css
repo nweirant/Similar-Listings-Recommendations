@@ -7,14 +7,10 @@
   color: #292b2c;
 }
 
-.carousel {
-  /* overflow: hidden; */
-}
-
 .container {
   width: 980px;
   /* margin: 0 -9px; */
-  overflow: hidden;
+  /* overflow: hidden; */
   /* padding: 0 9px 8px; */
 }
 
@@ -30,14 +26,26 @@
   /* padding: 24px 0; */
   width: 980px;
   margin: 0 auto;
+  /* overflow: hidden; */
+}
+
+.carousel-inner {
+  /* margin: 0 -9px; */
+  overflow: hidden;
+  padding-bottom: 9px;
 }
 
 .carousel-item {
   width: 980px;
+  float: left;
+  /* padding-bottom: 20px; */
+  /* position: absolute; */
 }
 
 .cardSlide {
   width: 311.333px;
+  float: left;
+  /* overflow: hidden; */
   /* margin-right: 23px; */
 }
 
@@ -50,8 +58,18 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   position: relative;
   width: 311.333px;
+  border: none;
   /* margin-right: 23px; */
   display: flex;
+  z-index: 1;
+  /* float: left; */
+  /* border-radius: 0 !important; */
+}
+
+.card:hover {
+  transition: 0.4s;
+  box-shadow: 0 9px 4px -4px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
 }
 
 .card-info {
@@ -70,6 +88,7 @@
   font-weight: 700;
   text-transform: uppercase;
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  margin-bottom: 0px;
 }
 
 .card-address {
@@ -111,12 +130,19 @@
   background-size: cover;
   height: 25px;
   position: absolute;
+  overflow: hidden;
+  top: 25px;
   right: 20px;
-  z-index: 1;
+  /* text-indent: 35px; */
+  z-index: 10;
 }
 
-.card-save:hover {
-  color: #032765;
+img {
+  /* z-index: 2; */
+}
+
+.card-save img:hover {
+  background-color: #0080c6;
   text-decoration: underline;
   transition: 0.3s;
 }
@@ -152,7 +178,7 @@
   font-size: 14px;
   line-height: 14px;
   text-align: right;
-  -webkit-font-smoothing: antialiased !important;
+  /* -webkit-font-smoothing: antialiased !important; */
 }
 
 .card-propertySeperator {
@@ -162,40 +188,6 @@
   width: 2px;
 }
 
-.prevCircleArrow:after {
-  transform: translate(-25%, -50%) rotate(-135deg);
-  content: "";
-  border-top: 2px solid #8c8c8c;
-  border-right: 2px solid #8c8c8c;
-  width: 8px;
-  height: 8px;
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
-
-.CircleArrow {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 53%;
-  background: rgba(255, 255, 255, 0.75);
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14);
-  overflow: hidden;
-  text-indent: -99999em;
-  transition: all 300ms;
-  cursor: pointer;
-}
-
-.CircleArrow.isInactive {
-  background: #e6e6e6;
-}
-
-.CircleArrow:hover {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
 a {
   text-decoration: none;
   display: inline-block;
@@ -203,43 +195,34 @@ a {
 }
 
 a:hover {
-  /* background-color: #ddd; */
-  color: black;
+  color: #8c8c8c;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transition: 300ms;
 }
 
 .previous {
-  color: black;
-  /* height: 100%; */
-  border-radius: 53%;
-  background: rgba(255, 255, 255, 0.75);
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14);
-  overflow: hidden;
-  transition: all 300ms;
-  cursor: pointer;
-  bottom: 174px;
-  height: 52px;
-  width: 52px;
+  height: 100%;
   left: -66px;
-  position: absolute;
 }
 
 .next {
-  color: black;
-  /* height: 100%; */
+  right: -66px;
+}
+
+.round {
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #8c8c8c;
   border-radius: 53%;
   background: rgba(255, 255, 255, 0.75);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14);
   overflow: hidden;
-  transition: all 300ms;
+
   cursor: pointer;
   bottom: 174px;
   height: 52px;
   width: 52px;
-  right: -66px;
   position: absolute;
-}
-
-.round {
-  /* border-radius: 50%; */
 }

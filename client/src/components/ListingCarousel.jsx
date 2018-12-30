@@ -23,10 +23,13 @@ class ListingCarousel extends React.Component {
   }
 
   handlePrevClick() {
+    event.preventDefault();
     $(".carousel").carousel("prev");
   }
 
   handleNextClick() {
+    event.preventDefault();
+
     $(".carousel").carousel("next");
   }
 
