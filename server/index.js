@@ -7,7 +7,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use("/homes/:id", express.static(path.join(__dirname, "../client/dist")));
+app.use("/:id", express.static(path.join(__dirname, "../client/dist")));
 app.use("/", router);
 
 app.listen(3011, () => console.log("Server Working!!!"));

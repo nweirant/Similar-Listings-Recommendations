@@ -13,6 +13,7 @@ const routeHandlers = {
     });
   },
   alternateRoute: (req, res) => {
+    // res.render("landing");
     res.sendStatus(404);
   }
 };
