@@ -7,7 +7,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Route exact path="/homes/:id" component={ListingCarousel} />
+        <Route exact path="/:id" component={ListingCarousel} />
       </div>
     );
   }
