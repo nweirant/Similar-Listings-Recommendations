@@ -2,7 +2,7 @@ const faker = require("faker");
 const Home = require("./homeModel.js");
 
 var insertAllHomes = () => {
-  var cities = ["MANHATTAN", "BROOKLYN", "QUEENS", "BRONX", "STATEN ISLAND"];
+  var cities = ["Manhattan", "Brooklyn", "Queens", "Bronx", "Staten Island"];
   for (var i = 0; i < 100; i++) {
     var home = generateHomeAttributes({}, i, cities);
     new Home(home).save(err => {
@@ -32,7 +32,7 @@ var decorateLowTier = (home, id, cities) => {
   home.bedNum = 1;
   home.bathNum = 1;
   home.sqFootage = getRandomNumber(350, 600);
-  home.imageUrl = `https://s3.amazonaws.com/hrnyc19apartmentimages/Images/${id}.jpg`;
+  home.imageUrl = `https://s3.amazonaws.com/hrnyc19apartmentimages/Images/${id}`;
   return home;
 };
 
@@ -43,7 +43,7 @@ var decorateMidTier = (home, id, cities) => {
   home.bedNum = getRandomNumber(1, 2);
   home.bathNum = getRandomNumber(1, home.bedNum);
   home.sqFootage = getRandomNumber(450, 900);
-  home.imageUrl = `https://s3.amazonaws.com/hrnyc19apartmentimages/Images/${id}.jpg`;
+  home.imageUrl = `https://s3.amazonaws.com/hrnyc19apartmentimages/Images/${id}`;
   return home;
 };
 
@@ -54,7 +54,7 @@ var decorateHighTier = (home, id, cities) => {
   home.bedNum = getRandomNumber(2, 4);
   home.bathNum = getRandomNumber(2, home.bedNum === 2 ? 2 : home.bedNum - 1);
   home.sqFootage = getRandomNumber(1000, 2500);
-  home.imageUrl = `https://s3.amazonaws.com/hrnyc19apartmentimages/Images/${id}.jpg`;
+  home.imageUrl = `https://s3.amazonaws.com/hrnyc19apartmentimages/Images/${id}`;
   return home;
 };
 
@@ -65,7 +65,7 @@ var decorateBallerTier = (home, id, cities) => {
   home.bedNum = getRandomNumber(3, 7);
   home.bathNum = getRandomNumber(2, home.bedNum < 5 ? 3 : home.bedNum - 2);
   home.sqFootage = getRandomNumber(2000, 6000);
-  home.imageUrl = `https://s3.amazonaws.com/hrnyc19apartmentimages/Images/${id}.jpg`;
+  home.imageUrl = `https://s3.amazonaws.com/hrnyc19apartmentimages/Images/${id}`;
   return home;
 };
 
