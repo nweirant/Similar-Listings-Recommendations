@@ -1,13 +1,32 @@
 const faker = require("faker");
 var loremIpsum = require('lorem-ipsum');
 const Home = require("./homeModel.js");
+const pg = require('pg');
+const { Pool, Client } = require('pg');
+const connection = 'postgres://localhost:5432/testdb';
+
+const client = new pg.Client(connection);
+client.connect((err) => {
+  if (err) {
+    console.log(err);
+  }
+});
+
+insertAllHomesPG = () => {
+  console.log('attempting to connect');
+  pg.connect(function(err, client, done) {
+    if (err) {
+      console.log(err);
+    }
+    client.query('CREATE TABLE items(id SERIAL PRIMARY KEY, text VARCHAR(40) not null, complete BOOLEAN)');
+  done()
+  })
+}
 
 
-// var now = require("performance-now")
-// var start = now()
-// var end = now()
-// console.log(start.toFixed(3)) // the number of milliseconds the current node process is running
-// console.log((start-end).toFixed(3))
+// singleton pool shutdown
+
+
 
 
 var iter = 2500; //# per batch
@@ -30,6 +49,9 @@ var insertAllHomes = () => {
      }
    });
 };
+
+var insertAllHomesPG = () => {
+}
 
 
 
@@ -107,5 +129,6 @@ var getRandomNumber = function(min, max) {
   return Math.floor(Math.random() * (max + 1 - min)) + min;
 };
 
-insertAllHomes();
+//insertAllHomes();
+insertAllHomesPG();
 module.exports = insertAllHomes;
