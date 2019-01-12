@@ -3,20 +3,22 @@ const homeHelpers = require("./homesHelpers.js");
 
 const homes = {
   generateHomes: (id, callback) => {
-    var similarListings = homeHelpers.chooseSubsetIds(id);
+    var similarListings = homeHelpers.chooseSubsetIds(id); //returns an array of ids
     var imageUrls = homes.createUrls(similarListings);
-    return homes.getHomes(imageUrls, callback);
+    return homes.getHomes(id, similarListings, callback);
   },
 
   createUrls: listings => {
     return listings.map(
-      id => `https://s3.amazonaws.com/hrnyc19apartmentimages/Images/${id}`
+      id => `https://picsum.photos/200/300/?${id}`
     );
   },
 
-  getHomes: (imageUrls, callback) => {
-    Home.find({ imageUrl: { $in: imageUrls } }, (err, data) => {
+  getHomes: (id, similarlistings, callback) => {
+    console.log(similarlistings);
+      Home.find({ homeId: { $in: similarlistings } }, (err, data) => {
       if (err) {
+        console.log(err);
         callback(err);
       } else {
         callback(null, data);

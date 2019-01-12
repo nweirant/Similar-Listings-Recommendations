@@ -1,7 +1,7 @@
 const homeHelpers = {
   chooseSubsetIds: id => {
     const numOfListings = 9;
-    if (id < 25) {
+    if (id < 25 ) {
       return homeHelpers.insertSubsetIds(0, 24, numOfListings, id);
     } else if (id < 50) {
       return homeHelpers.insertSubsetIds(25, 49, numOfListings, id);
@@ -24,6 +24,7 @@ const homeHelpers = {
         i++;
       }
     }
+    console.log('subset', subset);
     return subset;
   }
 };

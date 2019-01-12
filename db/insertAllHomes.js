@@ -18,6 +18,7 @@ var insertAllHomes = () => {
    Home.collection.insertMany(homes, () => {
      if (currentBatch <= batchSize) {
        currentBatch++;
+       console.log(currentBatch);
        insertAllHomes();
      }
    });
@@ -39,7 +40,7 @@ var generateHomeAttributes = (home, id, cities) => { //if loop loses data!!
 };
 
 var decorateLowTier = (home, id, cities) => {
-  home._id = id;
+  home.homeId = id;
   //home.address = faker.address.streetAddress();
   home.address = 'street #' + getRandomNumber(2,999);
   home.city = cities[getRandomNumber(0, 4)];
@@ -48,7 +49,7 @@ var decorateLowTier = (home, id, cities) => {
   home.bedNum =  getRandomNumber(1, 5);
   home.bathNum =  getRandomNumber(1, home.bedNum);
   home.sqFootage = getRandomNumber(350, 1000);
-  home.imageUrl = `https://picsum.photos/200/300/?image=${id}`;
+  home.imageUrl = `https://picsum.photos/200/300/?${id}`;
   return home;
 };
 // var decorateMidTier = (home, id, cities) => {

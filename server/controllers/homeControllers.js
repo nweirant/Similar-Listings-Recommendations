@@ -3,6 +3,7 @@ const homes = require("../helpers/homes.js");
 const routeHandlers = {
   retrieveOne: (req, res) => {
     var id = req.params.id;
+    console.log(id);
     homes.generateHomes(id, (err, results) => {
       if (err) {
         res.sendStatus(500);

@@ -2,8 +2,9 @@ const mongoose = require("mongoose");
 const db = require("./index.js");
 
 const homeSchema = new mongoose.Schema({
+  homeId: { type: Number, unique: true },
   city: { type: String },
-  address: { type: String, unique: true },
+  address: { type: String },
   price: { type: Number },
   bedNum: { type: Number },
   bathNum: { type: Number },
