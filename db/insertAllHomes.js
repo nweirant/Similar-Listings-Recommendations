@@ -1,33 +1,6 @@
 const faker = require("faker");
 var loremIpsum = require('lorem-ipsum');
 const Home = require("./homeModel.js");
-const pg = require('pg');
-const { Pool, Client } = require('pg');
-const connection = 'postgres://localhost:5432/testdb';
-
-const client = new pg.Client(connection);
-client.connect((err) => {
-  if (err) {
-    console.log(err);
-  }
-});
-
-insertAllHomesPG = () => {
-  console.log('attempting to connect');
-  pg.connect(function(err, client, done) {
-    if (err) {
-      console.log(err);
-    }
-    client.query('CREATE TABLE items(id SERIAL PRIMARY KEY, text VARCHAR(40) not null, complete BOOLEAN)');
-  done()
-  })
-}
-
-
-// singleton pool shutdown
-
-
-
 
 var iter = 2500; //# per batch
 var batchSize = 4000; //batchs
@@ -50,14 +23,6 @@ var insertAllHomes = () => {
    });
 };
 
-var insertAllHomesPG = () => {
-}
-
-
-
-var generateAddress = () => {
-  return loremIpsum(2, 'words');
-}
 
 var generateHomeAttributes = (home, id, cities) => { //if loop loses data!!
   //var a = getRandomNumber(1, 2);
@@ -129,6 +94,5 @@ var getRandomNumber = function(min, max) {
   return Math.floor(Math.random() * (max + 1 - min)) + min;
 };
 
-//insertAllHomes();
-insertAllHomesPG();
+insertAllHomes();
 module.exports = insertAllHomes;
