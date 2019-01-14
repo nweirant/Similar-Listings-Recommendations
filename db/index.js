@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/homes");
+mongoose.connect("mongodb://http://ec2-54-174-184-209.compute-1.amazonaws.com/homes");
 
 const db = mongoose.connection;
 
