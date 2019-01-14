@@ -17,7 +17,7 @@ class ListingCarousel extends React.Component {
   }
 
   getSimilarListings(id) {
-    Axios.get(`ec2-54-174-184-209.compute-1.amazonaws.com/api/similarlistings/${id}`).then(({ data }) => {
+    Axios.get(`/api/similarlistings/${id}`).then(({ data }) => {
       this.setState({ listings: data });
     });
   }
