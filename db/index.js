@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("http://ec2-52-90-32-236.compute-1.amazonaws.com/homes", (err) => {
+mongoose.connect("mongodb://52.90.32.236/homes", (err) => {
   if (err) {
     console.log(err);
   }
