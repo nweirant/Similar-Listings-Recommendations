@@ -1,15 +1,12 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://52.90.32.236/homes", (err) => {
-  if (err) {
-    console.log(err);
-  }
-});
+mongoose.connect("mongodb://localhost/homes");
+//talal:shadie12@172.31.85.145
 
 const db = mongoose.connection;
 
-mongoose.Promise = Promise;
-db.on("error", () => {
+//mongoose.Promise = Promise;
+db.on("error", (err) => {
   console.log("connection err");
 });
 
