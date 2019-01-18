@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/homes");
-//talal:shadie12@172.31.85.145
-
+mongoose.connect(`mongodb://talal:shadie12@54.175.166.47/homes`);
 const db = mongoose.connection;
 
 //mongoose.Promise = Promise;
