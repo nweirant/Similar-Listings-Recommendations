@@ -3,7 +3,14 @@ const router = require("./routes.js");
 const compress = require("compression");
 const path = require("path");
 const bodyParser = require("body-parser");
+//const responseTime = require('response-time')
+
 const app = express();
+
+// client.on('error' (err) => {
+//   console.log(err);
+// });
+
 
 app.use(compress());
 app.use(bodyParser.urlencoded({ extended: true }));
