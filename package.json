@@ -9,7 +9,7 @@
     "server-dev": "nodemon ./server/index.js",
     "start": "webpack -p && nodemon ./server/index.js",
     "test": "jest",
-    "redirect" : "sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 90 -j REDIRECT --to-port 9011"
+    "redirect": "sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 90 -j REDIRECT --to-port 9011"
   },
   "repository": {
     "type": "git",
@@ -36,7 +36,9 @@
     "pg": "^7.7.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "redis": "^2.8.0",
+    "response-time": "^2.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
