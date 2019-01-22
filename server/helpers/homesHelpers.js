@@ -1,14 +1,14 @@
 const homeHelpers = {
   chooseSubsetIds: id => {
     const numOfListings = 9;
-    if (id < 25 ) {
-      return homeHelpers.insertSubsetIds(0, 24, numOfListings, id);
-    } else if (id < 50) {
-      return homeHelpers.insertSubsetIds(25, 49, numOfListings, id);
-    } else if (id < 75) {
-      return homeHelpers.insertSubsetIds(50, 74, numOfListings, id);
+    if (id < 2500000 ) {
+      return homeHelpers.insertSubsetIds(0, 2400000, numOfListings, id);
+    } else if (id < 5000000) {
+      return homeHelpers.insertSubsetIds(2500000, 4900000, numOfListings, id);
+    } else if (id < 7500000) {
+      return homeHelpers.insertSubsetIds(5000000, 7400000, numOfListings, id);
     } else {
-      return homeHelpers.insertSubsetIds(75, 99, numOfListings, id);
+      return homeHelpers.insertSubsetIds(7500000, 9900000, numOfListings, id);
     }
   },
 
@@ -24,7 +24,6 @@ const homeHelpers = {
         i++;
       }
     }
-    console.log('subset', subset);
     return subset;
   }
 };
