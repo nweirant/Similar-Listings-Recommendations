@@ -9,7 +9,7 @@
     "server-dev": "nodemon ./server/index.js",
     "start": "webpack -p && nodemon ./server/index.js",
     "test": "jest",
-    "redirect": "sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 90 -j REDIRECT --to-port 9011"
+    "redirect": "sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 9011"
   },
   "repository": {
     "type": "git",

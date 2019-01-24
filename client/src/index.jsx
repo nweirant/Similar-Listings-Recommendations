@@ -19,3 +19,5 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById("similar-container")
 );
+
+//export default App;

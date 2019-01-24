@@ -3,6 +3,7 @@ const router = require("./routes.js");
 const compress = require("compression");
 const path = require("path");
 const bodyParser = require("body-parser");
+var port = process.env.PORT || 9011;
 //const responseTime = require('response-time')
 
 const app = express();
@@ -19,4 +20,4 @@ app.use(bodyParser.json());
 app.use("/:id", express.static(path.join(__dirname, "../client/dist")));
 app.use("/", router);
 
-app.listen(9011, () => console.log("Server Working!!!"));
+app.listen(port, () => console.log(`Server listening on ${port}`));

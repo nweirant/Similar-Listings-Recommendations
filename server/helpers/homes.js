@@ -1,5 +1,6 @@
 //const db = require("../../db/index.js");
 const homeHelpers = require("./homesHelpers.js");
+const MONGO_URI = process.env.MONGO_URI;
 
 const homes = {
   generateHomes: (id, callback) => {
@@ -8,7 +9,7 @@ const homes = {
   },
   getHomes: (id, similarlistings, callback) => {
     var mongo = require('mongodb').MongoClient;
-    var url = `mongodb://localhost:27017/homes`;
+    var url = MONGO_URI;
     var similar = similarlistings;
     mongo.connect(url, (err, client) => {
       if (err) {

@@ -1,11 +1,24 @@
 const homes = require("../helpers/homes.js");
 const redis = require('redis');
-const client = redis.createClient(6379);
+const redisPort = process.env.REDIS_PORT || 6379;
+const redisHost = process.env.REDIS_HOST || '127.0.0.1';
+const client = redis.createClient({
+  port: redisPort,
+  host: '34.198.87.158'
+});
+
+client.on('connect', function() {
+    console.log(client);
+    console.log('connected');
+});
+
+client.on('error', function (err) {
+    console.log('Something went wrong ' + err);
+});
 
 const routeHandlers = {
   retrieveOne: (req, res) => {
     var id = req.params.id;
-    console.log(id);
     homes.generateHomes(id, (err, results) => {
       if (err) {
         res.sendStatus(500);
