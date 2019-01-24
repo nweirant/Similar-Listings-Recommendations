@@ -4,12 +4,11 @@ const redisPort = process.env.REDIS_PORT || 6379;
 const redisHost = process.env.REDIS_HOST || '127.0.0.1';
 const client = redis.createClient({
   port: redisPort,
-  host: '34.198.87.158'
+  host: redisHost
 });
 
 client.on('connect', function() {
-    console.log(client);
-    console.log('connected');
+    console.log('redis connected');
 });
 
 client.on('error', function (err) {

@@ -3,7 +3,13 @@ const routeHandlers = require("./controllers/homeControllers.js");
 const router = express.Router();
 
 const redis = require('redis');
-const client = redis.createClient(6379);
+const redisPort = process.env.REDIS_PORT || 6379;
+const redisHost = process.env.REDIS_HOST || '127.0.0.1';
+const client = redis.createClient({
+  port: redisPort,
+  host: redisHost
+});
+
 
 
 //check is data is stored in redis
