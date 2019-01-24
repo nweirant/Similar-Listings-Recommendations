@@ -16,7 +16,7 @@ const app = express();
 app.use(compress());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+app.use("/", express.static(path.join(__dirname, "../client/dist")));
 app.use("/:id", express.static(path.join(__dirname, "../client/dist")));
 app.use("/", router);
 
