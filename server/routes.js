@@ -13,7 +13,7 @@ const client = redis.createClient({
 
 
 //check is data is stored in redis
-router.get("/api/similarlistings/:id", cache, routeHandlers.retrieveOne);
+router.get("/:id", cache, routeHandlers.retrieveOne);
 
 function cache(req, res, next) {
     const id = req.params.id;

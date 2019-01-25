@@ -1,6 +1,10 @@
-//const db = require("../../db/index.js");
 const homeHelpers = require("./homesHelpers.js");
-const MONGO_URI = process.env.MONGO_URI;
+const connect = require('../../db/index.js');
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost/homes';
+var MongoClient = require('mongodb').MongoClient;
+var url = MONGO_URI;
+const client = new MongoClient(url);
+const connection = client.connect();
 
 const homes = {
   generateHomes: (id, callback) => {
@@ -8,15 +12,10 @@ const homes = {
     return homes.getHomes(id, similarListings, callback);
   },
   getHomes: (id, similarlistings, callback) => {
-    var mongo = require('mongodb').MongoClient;
-    var url = MONGO_URI;
+    //var mongo = require('mongodb').MongoClient;
+    //var url = MONGO_URI;
     var similar = similarlistings;
-    mongo.connect(url, (err, client) => {
-      if (err) {
-       console.error('error connecting to mongo')
-        return
-      }
-      //console.log('Mongo connected to localhost');
+    connect.then(() => {
       const db = client.db('homes');
       const collection = db.collection('homes');
       collection.find({ homeId: { $in: similar } }).toArray(function(err,results) {
@@ -26,7 +25,24 @@ const homes = {
           callback(null, results);
         }
       });
-    });
+    })
+    //old
+    // mongo.connect(url, (err, client) => {
+    //   if (err) {
+    //    console.error('error connecting to mongo')
+    //     return
+    //   }
+    //   //console.log('Mongo connected to localhost');
+    //   const db = client.db('homes');
+    //   const collection = db.collection('homes');
+      // collection.find({ homeId: { $in: similar } }).toArray(function(err,results) {
+      //   if (err) {
+      //     console.log('error finding similar homes');
+      //   } else {
+      //     callback(null, results);
+      //   }
+      // });
+    // });
   }
 };
 
