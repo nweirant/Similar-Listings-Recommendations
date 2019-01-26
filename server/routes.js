@@ -20,7 +20,7 @@ function cache(req, res, next) {
     client.get(id, function (err, data) {
         if (err) throw err;
         if (data != null) {
-          res.send((id, data));
+          res.send((data));
         } else {
           next();
         }
