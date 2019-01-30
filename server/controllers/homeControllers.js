@@ -22,7 +22,7 @@ const routeHandlers = {
       if (err) {
         res.sendStatus(500);
       } else {
-        client.setex(id, 60, JSON.stringify(results));
+        client.setex(id, 6000, JSON.stringify(results));
         res.send(results);
       }
     });
