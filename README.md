@@ -22,7 +22,7 @@ All being run on EC2 t2-micro server from AWS.
 5. Deploy EC2 instance with Nginx installed, configured to 'Least Connection' and update config file to redirect traffic to deployed services.
 
 
-## Install locally without loadbalancer
+## Install locally without load balancing
 1. Install dependencies. 
 ```
 npm install
@@ -39,13 +39,6 @@ npm run server-dev
 ## Built With
 Node.js, React, Express.js, MongoDB, Redis, Nginx, Docker, Amazon Web Services and Postgres. 
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
